@@ -16,15 +16,15 @@
         <main>
             <section class="container tic-tac-toe">
                 <div class="grid-container" id="tic-tac-toe">
-                    <button class="grid-space" id="zero"></button>
-                    <button class="grid-space" id="one"></button>
-                    <button class="grid-space" id="two"></button>
-                    <button class="grid-space" id="three"></button>
-                    <button class="grid-space" id="four"></button>
-                    <button class="grid-space" id="five"></button>
-                    <button class="grid-space" id="six"></button>
-                    <button class="grid-space" id="seven"></button>
-                    <button class="grid-space" id="eight"></button>
+                    <button class="grid-space" position='0' id="zero"></button>
+                    <button class="grid-space" position='1' id="one"></button>
+                    <button class="grid-space" position='2' id="two"></button>
+                    <button class="grid-space" position='3' id="three"></button>
+                    <button class="grid-space" position='4' id="four"></button>
+                    <button class="grid-space" position='5' id="five"></button>
+                    <button class="grid-space" position='6' id="six"></button>
+                    <button class="grid-space" position='7' id="seven"></button>
+                    <button class="grid-space" position='8' id="eight"></button>
                 </div>
                 <div class="container turn-container">
                     <spam class="turn" id="x">X</spam>
@@ -34,18 +34,26 @@
             <section class="container country-container" id="country-showcase">
                 <div id='country-display'>
                     <p>Click on grid...</p>
-                    <!-- <img src="#" alt="Randomly generated picture of a country's flag" id="img">
-                     -->
                 </div>
                 <button class="btn" id="correct">Correct</button>
                 <button class="btn" id="wrong">Wrong</button>
             </section>
         </main>
         <footer>
-            <img src="img/logo.png" alt="Fisk's logo" class='logo'>
-            <p>© Team Fisk SBS - 2021</p>
-            <p>Developed by <a href="https://www.github.com/xnths">Jonathas Castilho</a></p>
+            <p class="copyright">© Team Fisk SBS - 2021 | Developed by <a href="https://www.github.com/xnths">Castilho</a></p>
         </footer>
     </body>
-    <script src="./js/TTTController.js"></script>
+    <script src="./app/Controllers/TTTController.js"></script>
+    <script src="./app/Views/FlagView.js"></script>
+    <script src="./app/Views/View.js"></script>
+    <script>
+        let grid = document.querySelector("#tic-tac-toe");
+
+        let tttController = new TTTController();
+
+        grid.addEventListener("click", e => {
+            let position = parseInt(e.target.getAttribute('position'));
+            tttController.drawOnGrid(position);
+        })
+    </script>
 </html>

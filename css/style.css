@@ -49,12 +49,18 @@ p, spam{
     font-family: var(--font-default);
 }
 
+.copyright{
+    font-size: 0.8em;
+    padding: 0;
+    margin: 1em;
+}
+
 spam{
     font-size: 2em;
 }
 
 a{
-    color: var(--light-orange);
+    color: var(--light-blue);
     text-decoration: none;
 }
 
