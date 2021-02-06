@@ -1,0 +1,102 @@
+:root{
+    --red: #F94144;
+    --dark-orange: #F3722C;
+    --light-orange: #F8961E;
+    --yellow: #F9C74F;
+    --green: #90BE6D;
+    --light-blue: #43AA8B;
+    --dark-blue: #577590;
+
+    --background-contrast: rgba(9, 8, 8, 0.88);
+    --font-default: 'Roboto', sans-serif;
+}
+
+header, footer, main{
+    width: 100%;
+}
+
+body{
+    background: var(--background-contrast);
+}
+
+header, footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--red);
+}
+
+.logo{
+    width: 65px;
+}
+
+main{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+p, spam{
+    padding: 0.15em;
+    color: white;
+    text-align: center;
+    font-family: var(--font-default);
+}
+
+spam{
+    font-size: 2em;
+}
+
+a{
+    color: var(--light-orange);
+    text-decoration: none;
+}
+
+.container{
+    margin: 3%;
+}
+
+.tic-tac-toe{
+    width: 30%;
+    flex-direction: column;
+}
+
+.grid-space{
+    font-family: var(--font-default);
+    font-size: 3em;
+    color: white;
+    background: none;
+    border: 2px solid white;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1%;
+    aspect-ratio: 1;
+}
+
+.turn-container{
+    display:flex;
+    justify-content: space-around;
+    margin: 1.5em;
+}
+
+#country{
+    width: 100%;
+}
+
+.btn{
+    background: var(--red);
+    border: none;
+    border-bottom: 2px solid red;
+    color: white;
+    font-family: var(--font-default);
+    padding: 0.5em 1em;
+}
