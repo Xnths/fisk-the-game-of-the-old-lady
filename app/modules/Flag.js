@@ -1,6 +1,7 @@
 class Flag{
     constructor(countryName){
-        this._flag = _getImgURL(countryName + ".png");
+        let fileName = countryName.toLowerCase();
+        this._flag = this._getImgURL(fileName + ".png");
         Object.freeze();
     }
 

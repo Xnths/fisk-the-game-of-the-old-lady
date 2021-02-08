@@ -5,8 +5,8 @@ class FlagView extends View{
 
     _template(model){
         return `
-            <p>Where is the flag from?</p>
-            <img src="img/logo.png" alt="Randomly generated picture of a country's flag" id="img">
+            <p>Are you from ___________?</p>
+            <img src="${model.flagList[0].flag}" alt="Randomly generated picture of a country's flag" id="img">
         `
     }
 }
