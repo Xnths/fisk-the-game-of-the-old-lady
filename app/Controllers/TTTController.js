@@ -77,7 +77,14 @@ class TTTController{
     }
 
     _testColumn(){
-        return false;
+        let testColumn = [false, false, false];
+        let index = 0;
+
+        for(let i=0; i < this._gameStatus.length; i += 3){
+            testColumn[index] = this._gameStatus[i] == this._turn;
+            index++;
+        }
+        return !testColumn.includes(false);
     }
 
     _testRows(){
