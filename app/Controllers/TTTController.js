@@ -72,25 +72,31 @@ class TTTController{
         }
     }
 
+    _testMultiples(multiple, start = 0, end = 9){
+        let test = [false, false, false];
+        let index = 0;
+
+        for (let i=0; i < this._gameStatus.slice(start,end).length; i+=multiple){
+            test[index] = this._gameStatus.slice(start,end)[i] == this._turn;
+            index++;
+        }
+        return !test.includes(false);
+    }
+
     _testDiagonal(){
-        return false;
+        return this._testMultiples(4);
     }
 
     _testColumn(){
-        let testColumn = [false, false, false];
-        let index = 0;
-
-        for(let i=0; i < this._gameStatus.length; i += 3){
-            testColumn[index] = this._gameStatus[i] == this._turn;
-            index++;
-        }
-        return !testColumn.includes(false);
+        return this._testMultiples(3);
     }
 
     _testRows(){
-        let testFirstRow = !this._gameStatus.slice(0,3).map(n => n == this._turn).includes(false);
-        let testSecondRow = !this._gameStatus.slice(3,6).map(n => n == this._turn).includes(false);
-        let testThirdRow = !this._gameStatus.slice(6,9).map(n => n == this._turn).includes(false);
+        let testFirstRow = this._testMultiples(1, 0, 3);
+        let testSecondRow = this._testMultiples(1, 3, 6);
+        let testThirdRow = this._testMultiples(1, 6, 9);
+
+        console.log(testFirstRow, testSecondRow, testThirdRow);
 
         return [testFirstRow, testSecondRow, testThirdRow].includes(true);
     }
