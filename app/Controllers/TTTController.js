@@ -66,11 +66,10 @@ class TTTController{
     }
 
     _checkForWinner(){
-        if(_testRows() || _testColumn() || _testDiagonal()){
+        if(this._testRows() || this._testColumn() || this._testDiagonal()){
             alert(`${this._turn} wins!`);
             location.reload();
         }
-
     }
 
     _testDiagonal(){
@@ -86,7 +85,7 @@ class TTTController{
         let testSecondRow = !this._gameStatus.slice(3,6).map(n => n == this._turn).includes(false);
         let testThirdRow = !this._gameStatus.slice(6,9).map(n => n == this._turn).includes(false);
 
-        return ![testFirstRow, testSecondRow, testThirdRow].includes(false);
+        return [testFirstRow, testSecondRow, testThirdRow].includes(true);
     }
 
     correct(){
