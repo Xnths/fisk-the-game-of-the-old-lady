@@ -8,6 +8,7 @@
     --dark-blue: #577590;
 
     --background-contrast: rgba(9, 8, 8, 0.88);
+    --turn-border: 2px solid red;
     --font-default: 'Roboto', sans-serif;
 }
 
@@ -97,6 +98,11 @@ a{
 
 #img{
     width: 70%;
+}
+
+#x{
+    background: var(--red);
+    border-bottom: var(--turn-border);
 }
 
 .grid-space{

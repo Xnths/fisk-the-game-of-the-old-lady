@@ -1,12 +1,16 @@
-class FlagView extends View{
+class FlagView{
     constructor(element){
-        super(element);
+        this._element = element;
     }
 
-    _template(model){
+    _template(model, turnCounter){
         return `
             <p>Are you from ___________?</p>
-            <img src="${model.flagList[0].flag}" alt="Randomly generated picture of a country's flag" id="img">
+            <img src="${model.flagList[turnCounter].flag}" alt="Randomly generated picture of a country's flag" id="img">
         `
+    }
+
+    update(model, turnCounter){
+        this._element.innerHTML = this._template(model, turnCounter);
     }
 }

@@ -33,11 +33,10 @@
             </section>
             <section class="container country-container" id="country-showcase">
                 <div id='country-display'>
-                    <p>Click on grid...</p>
                 </div>
                 <div class="container options">
-                    <button class="btn" id="correct">Correct</button>
-                    <button class="btn" id="wrong">Wrong</button>
+                    <button class="btn" id="correct" onclick="tttController.correct()">Correct</button>
+                    <button class="btn" id="wrong" onclick="tttController.wrong()">Wrong</button>
                 </div>
             </section>
         </main>
@@ -50,10 +49,11 @@
     <script src="./app/modules/FlagList.js"></script>
     <script src="./app/Views/View.js"></script>
     <script src="./app/Views/FlagView.js"></script>
+    <script src="./app/Views/DefaultView.js"></script>
     <script>
         let grid = document.querySelector("#tic-tac-toe");
 
-        let tttController = new TTTController();
+        var tttController = new TTTController();
 
         grid.addEventListener("click", e => {
             let position = parseInt(e.target.getAttribute('position'));
